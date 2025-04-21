@@ -33,4 +33,10 @@ A Spring Boot REST API that provides structured country information using an ext
 - Maven
 
 ---
+### 📦 Build the Project
+
+```bash
+git clone https://github.com/bhanupriya123/CountryInformation.git
+cd CountryInformation
+./gradlew clean build
 
