@@ -3,8 +3,7 @@ package com.example.RestCountryService;
 /*
  * Copyright (c) 2025 Suraj
  *
- * Author: Suraj [you@example.com]
- * GitHub: https://github.com/yourusername
+ * Author: Bhanupriya Rout
  *
  * Licensed under the MIT License. You may obtain a copy of the License at
  * https://opensource.org/licenses/MIT
