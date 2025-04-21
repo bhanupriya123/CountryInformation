@@ -1,7 +1,7 @@
 package com.example.RestCountryService;
 
 /*
- * Copyright (c) 2025 Suraj
+ * Copyright (c) 2025 Bhanupriya Rout
  *
  * Author: Bhanupriya Rout
  *
