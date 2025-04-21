@@ -47,6 +47,11 @@ public class CountryResponse {
         this.population = population;
     }
 
+    public CountryResponse(String countryCode, String name) {
+        this.countryCode = countryCode;
+        this.name = name;
+    }
+
 
     public String getSizeCategory() {
         if (population < 1000000) {

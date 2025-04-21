@@ -48,9 +48,9 @@ public class CountryServiceTest {
 
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.openMocks(this); // Initialize mocks
-        mockCountryResponse = new CountryResponse("US", "United States of America", "Washington, D.C.", "Americas",
-                List.of("USD"), List.of("English"), List.of("CAN", "MEX"), 83000000L);
+        MockitoAnnotations.openMocks(this);
+        when(restTemplateBuilder.build()).thenReturn(restTemplate);
+        countryService = new CountryService(restTemplateBuilder);
 
     }
 
@@ -58,14 +58,15 @@ public class CountryServiceTest {
     public void testGetCountryDetails_Success() {
         // Given
         String countryCode = "US";
-        when(dummyCountryUtil.getDummyCountryByCode(countryCode)).thenReturn(mockCountryResponse);
-        // Mock utility method
+        CountryResponse mockResponse = new CountryResponse("US","United States of America");
+        // Set other fields as needed
 
-        // When
-        CountryResponse response = countryService.getCountryByCode(countryCode); // Call the service method
+        when(restTemplate.getForObject(anyString(), eq(CountryResponse.class))).thenReturn(mockResponse);
 
-        // Then
+        // Act
+        CountryResponse response = countryService.getCountryByCode(countryCode);
+
+        // Assert
         assertNotNull(response);
-        verify(dummyCountryUtil, times(1)).getDummyCountryByCode(countryCode); // Verify interaction
     }
 }
